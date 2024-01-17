@@ -58,6 +58,8 @@ public class Avion {
             System.out.println("Avionul nu are bagaje");
         }
 
+//test
+
 
     }
 }
