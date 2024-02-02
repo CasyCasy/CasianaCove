@@ -2,6 +2,9 @@ package Test;
 
 import HerpelMethod.AlertMethod;
 import HerpelMethod.ElementsMethod;
+import HerpelMethod.JavaScriptMethod;
+import Pages.CommonPage;
+import Pages.HomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -16,14 +19,18 @@ public class AllerTest {
     public WebDriver driver;
     public ElementsMethod elementMethod;
     public AlertMethod alertMethods;
+    JavaScriptMethod javaScriptMethod;
+
+    HomePage homePage;
+    CommonPage commonPage;
 
     @Test
 //definim metoda / metoda de test
     public void automationmethod() {
-
         //deschide un browser de Chrome
 
         driver = new ChromeDriver();
+
         //accesam o pagina web / apelez o metoda ..de ex cu get
         driver.get("https://demoqa.com/");
 
@@ -38,17 +45,23 @@ public class AllerTest {
 
         elementMethod= new ElementsMethod(driver);
         alertMethods = new AlertMethod(driver);
+        javaScriptMethod= new JavaScriptMethod(driver);
+        homePage = new HomePage(driver);
+        commonPage = new CommonPage(driver);
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,400)");
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,400)");
 
-        WebElement alertFrameWindowElement = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementMethod.clickOnElement(alertFrameWindowElement);
-      //  alertFrameWindowElement.click();
+//       WebElement alertFrameWindowElement = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
+//       elementMethod.clickOnElement(alertFrameWindowElement);
+//      alertFrameWindowElement.click();
+        homePage.goToDesiredMenu("Alerts, Frame & Windows");
 
-        WebElement alertsubmeniuElement = driver.findElement(By.xpath("//span[text()='Alerts']"));
-        elementMethod.clickOnElement(alertsubmeniuElement);
-       // alertsubmeniuElement.click();
+//        WebElement alertsubmeniuElement = driver.findElement(By.xpath("//span[text()='Alerts']"));
+//        elementMethod.clickOnElement(alertsubmeniuElement);
+//       alertsubmeniuElement.click();
+
+        commonPage.goToDesiresubdMenu("Alerts");
 
         WebElement alertokElement = driver.findElement(By.id("alertButton"));
         //alertokElement.click();

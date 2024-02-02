@@ -2,7 +2,8 @@ package Test;
 
 
 import HerpelMethod.ElementsMethod;
-import HerpelMethod.JavascriptHelpers;
+import HerpelMethod.JavaScriptMethod;
+import Pages.CommonPage;
 import Pages.HomePage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,9 +17,10 @@ public class PracticeForumTest {
     public WebDriver driver;
     public ElementsMethod elementMethod;
 
-   //JavascriptHelpers javascriptHelpers;
-    JavascriptExecutor javascriptExecutor;
+    JavaScriptMethod javaScriptMethod;
+
      HomePage homePage;
+     CommonPage commonPage;
 
     @Test
 //definim metoda / metoda de test
@@ -36,27 +38,30 @@ public class PracticeForumTest {
 
         driver.manage().window().maximize();
         elementMethod= new ElementsMethod(driver);
-
+       // this.javaScriptMethod = new JavaScriptMethod(driver);
+        javaScriptMethod = new JavaScriptMethod(driver);
         homePage= new HomePage(driver);
-        //javascriptHelpers= new JavascriptHelpers(driver);
+        commonPage = new CommonPage(driver);
 
 
 
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
-        //js.executeScript("window.scrollBy(0,400)");
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,400)");
+//
+//        // declaram un element
+//        List <WebElement> formElement=driver.findElements(By.xpath("//h5"));
 
+            //elementMethod.selectElementFromListbyText(formElement,"Forms");
+       //  elementMethod.clickOnElement(formElement);
+         homePage.goToDesiredMenu("Forms");
 
+       // WebElement formsField = driver.findElement(By.xpath("//h5[text()='Forms']"));
+        //javaScriptMethod.forceClick(formsField);
+//       List<WebElement> practiceFormElement= driver.findElements(By.xpath("//span[@class='text']"));
+//        elementMethod.selectElementFromListbyText(practiceFormElement,"Practice Form");
 
-        // declaram un element
-        List <WebElement> formElement=driver.findElements(By.xpath("//h5"));
+        commonPage.goToDesiresubdMenu("Practice Form");
 
-        elementMethod.selectElementFromListbyText(formElement,"Forms");
-
-        //elementMethod.clickOnElement(formElement);
-
-
-       List<WebElement> practiceFormElement= driver.findElements(By.xpath("//span[text()='Practice Form']"));
-        elementMethod.selectElementFromListbyText(practiceFormElement,"Practice Form");
 
         WebElement firstNameElement=driver.findElement(By.id("firstName"));
         elementMethod.fillElement(firstNameElement, "Mihai");

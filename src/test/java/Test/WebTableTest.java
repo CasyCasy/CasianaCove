@@ -1,5 +1,9 @@
 package Test;
 
+import HerpelMethod.ElementsMethod;
+import HerpelMethod.JavaScriptMethod;
+import Pages.CommonPage;
+import Pages.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +18,10 @@ public class WebTableTest {
 
     // tip de data specifica Seleniumului "Webdriver-ul. Definim o variabila globala
     public WebDriver driver;
+    JavaScriptMethod javaScriptMethod;
+    ElementsMethod elementsMethod;
+    HomePage homePage;
+    CommonPage commonPage;
 
     @Test
 //definim metoda / metoda de test
@@ -28,18 +36,25 @@ public class WebTableTest {
         //facem Browserul in stilul Maximize
 
         driver.manage().window().maximize();
+        javaScriptMethod = new JavaScriptMethod(driver);
+        elementsMethod = new ElementsMethod(driver);
+        homePage = new HomePage(driver);
+        commonPage = new CommonPage(driver);
 
-        // facem un scroll
-        // 0 este x / 100 este y
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,400)");
-        //declaram un element - acest element este o varianta locala si anume Webelement
+//        // facem un scroll
+//        // 0 este x / 100 este y
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,400)");
+//        //declaram un element - acest element este o varianta locala si anume Webelement
+//
+//        WebElement Elementsfield = driver.findElement(By.xpath("//h5[text()='Elements']"));
+//        Elementsfield.click();
+        homePage.goToDesiredMenu("Elements");
 
-        WebElement Elementsfield = driver.findElement(By.xpath("//h5[text()='Elements']"));
-        Elementsfield.click();
 
-        WebElement WebTablefiel = driver.findElement(By.xpath("//span[text()='Web Tables']"));
-        WebTablefiel.click();
+//        WebElement WebTablefiel = driver.findElement(By.xpath("//span[text()='Web Tables']"));
+//        WebTablefiel.click();
+        commonPage.goToDesiresubdMenu("Web Tables");
 
         List<WebElement> tableElement = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
         Integer actualTablesize = tableElement.size();
