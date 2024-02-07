@@ -42,7 +42,7 @@ HomePage extends CommonPage {
     // facem metode specifice pentru pagina
     public void goToDesiredMenu (String menu) {
         elementsMethod.clickOnElement(consentElement);
-        javaScriptMethod.scrollDownOnWindow(400);
+        javaScriptMethod.scrollDownOnWindow(500);
         elementsMethod.selectElementFromListbyText(elements, menu);
     }
 

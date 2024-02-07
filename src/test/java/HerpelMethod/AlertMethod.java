@@ -21,17 +21,17 @@ public class AlertMethod {
         alertok.accept();
     }
 
-    public void explicitAlertWait (){
+    public void explicitAlertWait ()
+    {
 
         // definim un wait explicit ca sa astepte dupa alerte
 
         WebDriverWait wait= new WebDriverWait( driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.alertIsPresent());
-
-
     }
 
-    public void interractWithDelayAlert (){
+    public void interractWithDelayAlert ()
+    {
 
         explicitAlertWait();
         Alert alertDelayok = driver.switchTo().alert();
@@ -39,4 +39,18 @@ public class AlertMethod {
 
 
     }
+
+    public void stopInteractingWithAlertDelay()
+    {
+        explicitAlertWait();
+        Alert alertConfirmation = driver.switchTo().alert();
+        alertConfirmation.dismiss();
+    }
+
+    public void sendKeysToAlertButton(String value)
+    {
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys(value);
+    }
+
 }

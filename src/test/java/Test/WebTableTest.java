@@ -4,6 +4,7 @@ import HerpelMethod.ElementsMethod;
 import HerpelMethod.JavaScriptMethod;
 import Pages.CommonPage;
 import Pages.HomePage;
+import ShareData.ShareData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,10 +15,10 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class WebTableTest {
+public class WebTableTest extends ShareData {
 
     // tip de data specifica Seleniumului "Webdriver-ul. Definim o variabila globala
-    public WebDriver driver;
+    //public WebDriver driver;
     JavaScriptMethod javaScriptMethod;
     ElementsMethod elementsMethod;
     HomePage homePage;
@@ -29,13 +30,13 @@ public class WebTableTest {
 
         //deschide un browser de Chrome
 
-        driver = new ChromeDriver();
+       // driver = new ChromeDriver();
         //accesam o pagina web / apelez o metoda ..de ex cu get
-        driver.get("https://demoqa.com/");
+        //driver.get("https://demoqa.com/");
 
         //facem Browserul in stilul Maximize
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         javaScriptMethod = new JavaScriptMethod(driver);
         elementsMethod = new ElementsMethod(driver);
         homePage = new HomePage(driver);
@@ -104,6 +105,8 @@ public class WebTableTest {
         Assert.assertTrue(actualTableValue.contains(age));
         Assert.assertTrue(actualTableValue.contains(salary));
         Assert.assertTrue(actualTableValue.contains(department));
+
+
 
 // Validare
 

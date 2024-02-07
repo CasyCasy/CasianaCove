@@ -5,6 +5,7 @@ import HerpelMethod.ElementsMethod;
 import HerpelMethod.JavaScriptMethod;
 import Pages.CommonPage;
 import Pages.HomePage;
+import ShareData.ShareData;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -14,9 +15,9 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class AllerTest {
+public class AllerTest  extends ShareData {
 
-    public WebDriver driver;
+   // public WebDriver driver;
     public ElementsMethod elementMethod;
     public AlertMethod alertMethods;
     JavaScriptMethod javaScriptMethod;
@@ -29,19 +30,19 @@ public class AllerTest {
     public void automationmethod() {
         //deschide un browser de Chrome
 
-        driver = new ChromeDriver();
+       // driver = new ChromeDriver();
 
         //accesam o pagina web / apelez o metoda ..de ex cu get
-        driver.get("https://demoqa.com/");
+       // driver.get("https://demoqa.com/");
 
 
         //definim un wait implicit pt un interval de maxim de timp
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //facem Browserul in stilul Maximize
 
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
 
         elementMethod= new ElementsMethod(driver);
         alertMethods = new AlertMethod(driver);

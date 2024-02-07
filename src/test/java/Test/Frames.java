@@ -4,6 +4,7 @@ import HerpelMethod.ElementsMethod;
 import HerpelMethod.JavaScriptMethod;
 import Pages.CommonPage;
 import Pages.HomePage;
+import ShareData.ShareData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +12,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class Frames {
+public class Frames extends ShareData {
 
-    public WebDriver driver;
+//    public WebDriver driver;
     JavaScriptMethod javaScriptMethod;
     ElementsMethod elementsMethod;
     HomePage homePage;
@@ -25,9 +26,9 @@ public class Frames {
 
         //deschide un browser de Chrome
 
-        driver = new ChromeDriver();
+//        driver = new ChromeDriver();
         //accesam o pagina web / apelez o metoda ..de ex cu get
-        driver.get("https://demoqa.com/");
+//        driver.get("https://demoqa.com/");
         javaScriptMethod = new JavaScriptMethod(driver);
         elementsMethod = new ElementsMethod(driver);
         homePage = new HomePage(driver);
@@ -35,7 +36,7 @@ public class Frames {
 
         //facem Browserul in stilul Maximize
 
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
 
           JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollBy(0,400)");
