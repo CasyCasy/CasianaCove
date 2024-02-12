@@ -8,9 +8,12 @@ public class OOPTeste {
 
     public void metosaTest(){
 
-//        Student Cristi =  new Student("Pop", "Cristi", 25,"FEEA",2010,true);
+          Student Cristi =  new Student("Pop", "Cristi", 25,"FEEA",2010,true);
 //        Cristi.infoStudent();
 //        Cristi.mananca();
+        Cristi.infoPersoana();
+
+
 
 
         Angajat Mihai = new Angajat("Popa","Misu",30,"Endava",15,35);

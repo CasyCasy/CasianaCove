@@ -1,6 +1,6 @@
 package OOP;
 
-import OOP.Abstractizare.StudentInt;
+
 
 public class Student  extends Persoana implements StudentInt {
     private String facultate;

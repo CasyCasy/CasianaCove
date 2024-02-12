@@ -2,7 +2,7 @@ package OOP;
 
 public class Angajat extends  Persoana implements AngajatInt{
      // public - codul se poate accesa de oriunde si din orice clasa
-    // private - codul se poate accesa doar din clasa incare s-a scris codul
+    // private - codul se poate accesa doar din clasa in care s-a scris codul
     //protected - codul se poate accesa doar din pachetul in care s-a scris codul dar si de catre subclase ( OPMostenire -ClasaParinte si ClasaCopil)
     //default- codul se poate accesa doar din pachetul in care s-a scris codul. Intra pe default daca nu se specifica un alt modificator de acces
 
