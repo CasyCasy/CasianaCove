@@ -26,4 +26,4 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name:Run automation suite
-      run: mvn -clean install
+      run: mvn -B package --file pom.xml
