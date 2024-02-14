@@ -10,13 +10,13 @@ import java.util.List;
 
 public class CommonPage {
 
-    WebDriver driver;
-    ElementsMethod elementsMethod;
-    JavaScriptMethod javaScriptMethod;
-    WindowsMethod windowsMethod;
-    FramesMethod framesMethod;
+    protected WebDriver driver;
+    protected ElementsMethod elementsMethod;
+    protected JavaScriptMethod javaScriptMethod;
+    protected  WindowsMethod windowsMethod;
+    protected FramesMethod framesMethod;
 
-    AlertMethod alertMethod;
+    protected AlertMethod alertMethod;
 // atunci cand creez un contructor, daca pun toti parametrii de mai sus mi-i va pune ca elemente, noi avem neoie de driver si celelalte le initializam separat
     public CommonPage(WebDriver driver) {
         this.driver = driver;
@@ -31,7 +31,7 @@ public class CommonPage {
 
     // identificam Weblementele specifice pt sub pagina asta
     @FindBy(xpath ="//span[@class='text']")
-    List<WebElement> elements;
+   private List<WebElement> elements;
 
     //Facem metode specifice pt pagina
 

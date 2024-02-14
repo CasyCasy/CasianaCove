@@ -18,10 +18,10 @@ import java.util.List;
 public class PracticeForumTest extends ShareData {
 
   // public WebDriver driver;
-    public ElementsMethod elementMethod;
+  //public ElementsMethod elementMethod;
     public PracticeFormPage practiceFormPage;
 
-    JavaScriptMethod javaScriptMethod;
+   // JavaScriptMethod javaScriptMethod;
     JavascriptExecutor js;
 
      HomePage homePage;
@@ -43,12 +43,12 @@ public class PracticeForumTest extends ShareData {
 
        // driver.manage().window().maximize();
        // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        elementMethod= new ElementsMethod(driver);
+//        elementMethod= new ElementsMethod(driver);
       // this.javaScriptMethod = new JavaScriptMethod(driver);
-        javaScriptMethod = new JavaScriptMethod(driver);
-        homePage= new HomePage(driver);
-        commonPage = new CommonPage(driver);
-        practiceFormPage= new PracticeFormPage(driver);
+//        javaScriptMethod = new JavaScriptMethod(driver);
+        homePage= new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
+        practiceFormPage= new PracticeFormPage(getDriver());
 
 //        List<String> hobbies=  new ArrayList<>();
 //        hobbies.add ("Sports");
@@ -59,7 +59,7 @@ public class PracticeForumTest extends ShareData {
 
 //        practiceFormPage.completeFirstRegion("Mihai","Natalia","abc@yahoo.com","Ctr. Cicici, nr 4","123456");
 //
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("window.scrollBy(0,400)");
 
 //        // declaram un element

@@ -1,6 +1,7 @@
 package Pages;
 
 import HerpelMethod.ElementsMethod;
+import HerpelMethod.JavaScriptMethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -27,50 +28,50 @@ public class PracticeFormPage extends CommonPage {
 //
 //    }
      @FindBy(id = "firstName")
-    WebElement firstNameElement;
+    private WebElement firstNameElement;
 
     @FindBy(id="lastName")
-    WebElement lastNameElement;
+    private WebElement lastNameElement;
     @FindBy(id="userEmail")
-    WebElement emailElement;
-    @FindBy(css = "input[placeholder='Mobile Number']")
-    WebElement mobileElement;
+    private WebElement emailElement;
+     @FindBy(css = "input[placeholder='Mobile Number']")
+     private WebElement mobileElement;
 
 
     @FindBy(id="uploadPicture")
-    WebElement pictureElement;
+    private WebElement pictureElement;
 
     @FindBy(xpath = "//label[@for='gender-radio-1']")
-    WebElement MaleElement;
+    private WebElement MaleElement;
     @FindBy(xpath = "//label[@for='gender-radio-2']")
-    WebElement FemaleElement;
+    private WebElement FemaleElement;
     @FindBy(xpath = "//label[@for='gender-radio-3']")
-    WebElement OtherElement;
+    private WebElement OtherElement;
 
-    @FindBy(id="currentAddress")
-    WebElement adressElement;
+     @FindBy(id="currentAddress")
+     private WebElement adressElement;
 
     @FindBy(id="react-select-3-input")
-    WebElement stateElement;
+    private WebElement stateElement;
 
     @FindBy(id="react-select-4-input")
-    WebElement cityElement;
+    private WebElement cityElement;
 
     @FindBy(id="submit")
-    WebElement submitElement;
+    private WebElement submitElement;
 
     @FindBy(xpath = "//label[@for='hobbies-checkbox-1']")
-    WebElement SportHobbiesElement;
+    private WebElement SportHobbiesElement;
     @FindBy(xpath = "//label[@for='hobbies-checkbox-2']")
-    WebElement ReadingHobbiesElement;
-    @FindBy(xpath = "//label[@for='hobbies-checkbox-3']")
-    WebElement MusicHobbiesElement;
+    private  WebElement ReadingHobbiesElement;
+     @FindBy(xpath = "//label[@for='hobbies-checkbox-3']")
+     private WebElement MusicHobbiesElement;
 
 //    @FindBy(xpath = "//div[@id='subjectsContainer']")
 //    WebElement subjectElement;
 
     @FindBy(id="subjectsInput")
-    WebElement subjectElement;
+    private WebElement subjectElement;
 
     public PracticeFormPage(WebDriver driver) {
         super(driver);
@@ -118,6 +119,8 @@ public void completeHobies (List <String> hobbies ){
     hobbiesElement.add(ReadingHobbiesElement);
     hobbiesElement.add(MusicHobbiesElement);
     elementsMethod.clickMultipleValues(hobbiesElement, hobbies);
+
+    //javaScriptMethod.scrollOnWindow (0, 400);
 
 }
 }

@@ -30,10 +30,10 @@ HomePage extends CommonPage {
 
     // identificam webelementele specifice acestei pagini
     @FindBy(xpath = "//h5")
-     List<WebElement> elements;
+     private List<WebElement> elements;
 
-    @FindBy(xpath = "//p[text()='Consent']")
-     WebElement consentElement;
+     @FindBy(xpath = "//p[text()='Consent']")
+     private WebElement consentElement;
 
     public HomePage(WebDriver driver) {
         super(driver);

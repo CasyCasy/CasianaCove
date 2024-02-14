@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class ShareData {
 
-    public WebDriver driver;
+    private WebDriver driver;
 
     @BeforeMethod
     // este o adnotare care se actoveaza inaintea unei clase de test
@@ -39,6 +39,9 @@ public class ShareData {
 
         driver.quit();
 
+    }
 
+    public WebDriver getDriver() {
+        return driver;
     }
 }

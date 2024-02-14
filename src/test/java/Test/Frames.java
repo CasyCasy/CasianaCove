@@ -16,7 +16,7 @@ public class Frames extends ShareData {
 
 //    public WebDriver driver;
     JavaScriptMethod javaScriptMethod;
-    ElementsMethod elementsMethod;
+  ElementsMethod elementsMethod;
     HomePage homePage;
     CommonPage commonPage;
 
@@ -29,38 +29,38 @@ public class Frames extends ShareData {
 //        driver = new ChromeDriver();
         //accesam o pagina web / apelez o metoda ..de ex cu get
 //        driver.get("https://demoqa.com/");
-        javaScriptMethod = new JavaScriptMethod(driver);
-        elementsMethod = new ElementsMethod(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
+//        javaScriptMethod = new JavaScriptMethod(driver);
+       elementsMethod = new ElementsMethod(getDriver());
+        commonPage = new CommonPage(getDriver());
 
         //facem Browserul in stilul Maximize
 
 //        driver.manage().window().maximize();
 
-          JavascriptExecutor js = (JavascriptExecutor) driver;
+          JavascriptExecutor js = (JavascriptExecutor) getDriver();
 //        js.executeScript("window.scrollBy(0,400)");
 //
 //        WebElement alertFrameWindowElement = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
 //        alertFrameWindowElement.click();
-        homePage.goToDesiredMenu("Alerts, Frame & Windows");
+         homePage.goToDesiredMenu("Alerts, Frame & Windows");
+
 
 //        WebElement frameElement = driver.findElement(By.xpath("//span[text()='Frames']"));
 //        frameElement.click();
         commonPage.goToDesiresubdMenu("Frames");
 
-        WebElement frameElement1 = driver.findElement(By.id("frame1"));
+        WebElement frameElement1 = getDriver().findElement(By.id("frame1"));
         frameElement1.click();
 
-        driver.switchTo().frame(frameElement1);
+        getDriver().switchTo().frame(frameElement1);
 
-        WebElement sampleHeadingFrameElement = driver.findElement(By.id("sampleHeading"));
+        WebElement sampleHeadingFrameElement = getDriver().findElement(By.id("sampleHeading"));
         System.out.println(" Textul din new tab este: " + sampleHeadingFrameElement.getText());
 
         // ne duce cu focusul pe pagina principala
-        driver.switchTo().defaultContent();
+        getDriver().switchTo().defaultContent();
 
-        WebElement frameElement2 = driver.findElement(By.id("frame2"));
+        WebElement frameElement2 = getDriver().findElement(By.id("frame2"));
         frameElement2.click();
 
         js.executeScript("window.scrollBy(200,200)");

@@ -37,10 +37,10 @@ public class WebTableTest extends ShareData {
         //facem Browserul in stilul Maximize
 
         //driver.manage().window().maximize();
-        javaScriptMethod = new JavaScriptMethod(driver);
-        elementsMethod = new ElementsMethod(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
+        javaScriptMethod = new JavaScriptMethod(getDriver());
+        elementsMethod = new ElementsMethod(getDriver());
+        homePage = new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
 
 //        // facem un scroll
 //        // 0 este x / 100 este y
@@ -57,42 +57,42 @@ public class WebTableTest extends ShareData {
 //        WebTablefiel.click();
         commonPage.goToDesiresubdMenu("Web Tables");
 
-        List<WebElement> tableElement = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
+        List<WebElement> tableElement = getDriver().findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
         Integer actualTablesize = tableElement.size();
 
 
-        WebElement Addfield = driver.findElement(By.id("addNewRecordButton"));
+        WebElement Addfield = getDriver().findElement(By.id("addNewRecordButton"));
         Addfield.click();
 
-        WebElement Firstnamefield = driver.findElement(By.id("firstName"));
+        WebElement Firstnamefield = getDriver().findElement(By.id("firstName"));
         String firstName = "Covasneanu";
         Firstnamefield.sendKeys(firstName);
 
-        WebElement Lastnamefield = driver.findElement(By.id("lastName"));
+        WebElement Lastnamefield = getDriver().findElement(By.id("lastName"));
         String lastName = "Casiana";
         Lastnamefield.sendKeys(lastName);
 
-        WebElement Emailfield = driver.findElement(By.id("userEmail"));
+        WebElement Emailfield = getDriver().findElement(By.id("userEmail"));
         String userEmail = "Casianam@yahoo.com";
         Emailfield.sendKeys(userEmail);
 
-        WebElement Agefield = driver.findElement(By.id("age"));
+        WebElement Agefield = getDriver().findElement(By.id("age"));
         String age = "37";
         Agefield.sendKeys(age);
 
-        WebElement Salaryfield = driver.findElement(By.id("salary"));
+        WebElement Salaryfield = getDriver().findElement(By.id("salary"));
         String salary = "2500";
         Salaryfield.sendKeys(salary);
 
-        WebElement Departmentfield = driver.findElement(By.id("department"));
+        WebElement Departmentfield = getDriver().findElement(By.id("department"));
         String department = "HR";
         Departmentfield.sendKeys(department);
 
-        WebElement Submitbutton = driver.findElement(By.id("submit"));
+        WebElement Submitbutton = getDriver().findElement(By.id("submit"));
         Submitbutton.click();
 
 
-        List<WebElement> expctedTableElement = driver.findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
+        List<WebElement> expctedTableElement = getDriver().findElements(By.xpath("//div[@class='rt-tbody']/div/div[@class='rt-tr -even' or @class='rt-tr -odd']"));
 
         Integer expectedTablesize = actualTablesize + 1;
         Assert.assertEquals(expctedTableElement.size(), expectedTablesize);

@@ -19,8 +19,8 @@ public class AllerTest  extends ShareData {
 
    // public WebDriver driver;
     public ElementsMethod elementMethod;
-    public AlertMethod alertMethods;
-    JavaScriptMethod javaScriptMethod;
+     public AlertMethod alertMethods;
+//    JavaScriptMethod javaScriptMethod;
 
     HomePage homePage;
     CommonPage commonPage;
@@ -44,11 +44,11 @@ public class AllerTest  extends ShareData {
 
         //driver.manage().window().maximize();
 
-        elementMethod= new ElementsMethod(driver);
-        alertMethods = new AlertMethod(driver);
-        javaScriptMethod= new JavaScriptMethod(driver);
-        homePage = new HomePage(driver);
-        commonPage = new CommonPage(driver);
+        elementMethod= new ElementsMethod(getDriver());
+       alertMethods = new AlertMethod(getDriver());
+//        javaScriptMethod= new JavaScriptMethod(getDriver());
+        homePage = new HomePage(getDriver());
+        commonPage = new CommonPage(getDriver());
 
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("window.scrollBy(0,400)");
@@ -64,7 +64,7 @@ public class AllerTest  extends ShareData {
 
         commonPage.goToDesiresubdMenu("Alerts");
 
-        WebElement alertokElement = driver.findElement(By.id("alertButton"));
+        WebElement alertokElement = getDriver().findElement(By.id("alertButton"));
         //alertokElement.click();
         elementMethod.clickOnElement(alertokElement);
 
@@ -79,7 +79,7 @@ public class AllerTest  extends ShareData {
 
 
 
-         WebElement alerDelayokElement = driver.findElement(By.id("timerAlertButton"));
+         WebElement alerDelayokElement = getDriver().findElement(By.id("timerAlertButton"));
          elementMethod.clickOnElement(alerDelayokElement);
         // alerDelayokElement.click();
 
