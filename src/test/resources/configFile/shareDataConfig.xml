@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <DriverCOnfig>
+        <LocalBrowser>Chrome</LocalBrowser>
+        <Url>https://demoqa.com/</Url>
+        <Headless>--headless</Headless>
+        <Reasolution>window-size=1920,1080</Reasolution>
+        <GPU>disable-gpu</GPU>
+        <Extentions>disable-extentions</Extentions>
+    </DriverCOnfig>
+    <DatebaseConfig>
+        <Port></Port>
+        <DatabaseName></DatabaseName>
+        <Username></Username>
+        <Password></Password>
+
+        //headless - testez in modul de remote
+
+    </DatebaseConfig>
+</configuration>
+
